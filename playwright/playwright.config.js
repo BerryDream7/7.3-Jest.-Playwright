@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 // @ts-nocheck
-const { devices } = require("@playwright/tests/App.spec");
+const { devices } = require("@playwright/tests");
 
 /**
  * Read environment variables from file.
@@ -50,6 +50,10 @@ const config = {
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
+        launchOptions: {
+          headless: false,
+          slowMo: 500,
+        },
       },
     },
 
